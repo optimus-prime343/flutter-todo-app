@@ -13,7 +13,10 @@ class _AddTodoBottomSheetState extends State<AddTodoBottomSheet> {
   String title = '';
 
   void handleAddTodo() {
-    TodoProvider todoProvider = Provider.of<TodoProvider>(context);
+    TodoProvider todoProvider = Provider.of<TodoProvider>(
+      context,
+      listen: false,
+    );
     if (title.isEmpty || title.length < 5) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -40,9 +43,9 @@ class _AddTodoBottomSheetState extends State<AddTodoBottomSheet> {
         color: Colors.white,
         child: Column(
           children: [
-            const TextField(
-              // onChanged: (value) => ,
-              decoration: InputDecoration(
+            TextField(
+              onChanged: (value) => setState(() => title = value),
+              decoration: const InputDecoration(
                 hintText: 'Enter todo title',
                 border: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -55,7 +58,7 @@ class _AddTodoBottomSheetState extends State<AddTodoBottomSheet> {
             TextButton(
               onPressed: handleAddTodo,
               child: const Text('Add Todo'),
-            )
+            ),
           ],
         ),
       ),

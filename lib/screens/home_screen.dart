@@ -31,6 +31,7 @@ class HomeScreen extends StatelessWidget {
                   child: TodoList(todos: value.todos),
                 ),
               ),
+              const SizedBox(height: 10.0),
               ElevatedButton(
                 onPressed: () {
                   showModalBottomSheet(
