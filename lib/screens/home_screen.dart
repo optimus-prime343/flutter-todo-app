@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_todo_app/widgets/add_todo_bottom_sheet.dart';
 import 'package:provider/provider.dart';
 
+import '../widgets/add_todo_bottom_sheet.dart';
 import '../providers/todo_provider.dart';
 import '../widgets/todo_list.dart';
 import '../widgets/todos_summary.dart';

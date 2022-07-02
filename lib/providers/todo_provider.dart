@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../data/dummy_todos.dart';
 
+import '../data/dummy_todos.dart';
 import '../models/todo_model.dart';
 
 class TodoProvider extends ChangeNotifier {
